@@ -20,7 +20,7 @@ class ColorController extends Controller
         return response()->json([
             'code' => 200,
             'status' => 'success',
-            'posts' => $colors
+            'colors' => $colors
         ], 200);
 
     }
@@ -31,7 +31,7 @@ class ColorController extends Controller
             $data = [
                 'code' => 200,
                 'status' => 'success',
-                'post' => $color
+                'color' => $color
             ];
         }else{
             $data = [
@@ -82,7 +82,7 @@ class ColorController extends Controller
                 $data = [
                     'code'=> 200,
                     'status' => 'success',
-                    'post' => $color
+                    'color' => $color
                 ];
             }
 
