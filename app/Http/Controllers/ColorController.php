@@ -101,11 +101,79 @@ class ColorController extends Controller
         return response()->json($data, $data['code']);
     }
 
-    public function update(){
+    public function update(Request $request, $id){
+        
+        $json = $request->input('json', null);
+        $params_array = json_decode($json, true);
+
+        $data = [
+            'code' => 400,
+            'status' => 'error',
+            'message' => 'Datos enviados incorrectamente'
+        ];
+
+        if(!empty($params_array)){
+
+            $validate = \Validator::make($params_array, [
+                'name' => 'required',
+                'color' => 'required',
+                'pantone' => 'required',
+                'year' => 'required'
+            ]);
+
+            if($validate->fails()){
+                $data['message'] = $validate->errors();
+                return reponse()->json($data, $data['code']);
+            }
+
+
+            unset($params_array['id']);
+            unset($params_array['created_at']);
+
+            $color = Color::find($id);
+
+            if(!empty($color) && is_object($color)){
+
+                $color->update($params_array);
+
+                $data = [
+                    'code' => 200,
+                    'status' => 'success',
+                    'color' => $color,
+                    'change' => $params_array
+                ];
+            }
+   
+        }
+        return response()->json($data, $data['code']);
 
     }
 
-    public function destroy(){
+    public function destroy($id){
+
         
+        $color = Color::find($id);
+
+        if(!empty($color)){
+            //Borrarlo
+            $color->delete();
+
+            //Devolver data
+            $data = [
+                'code' => 200,
+                'status' => 'success',
+                'color' => $color
+            ];
+        }else{
+            $data = [
+                'code' => 400,
+                'status' => 'error',
+                'message' => 'No se encontro registro'
+            ];
+        }
+
+        
+
+        return response()->json($data, $data['code']);
     }
 }
