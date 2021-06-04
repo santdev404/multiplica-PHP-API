@@ -25,6 +25,7 @@ Route::get('/', function () {
 //Rutas usuarios
 Route::post('/api/register', [UserController::class, 'register']);
 Route::post('/api/login', [UserController::class, 'login']);
+Route::get('/api/user/detail/{id}', [UserController::class, 'detail']);
 
 //Rutas post
 Route::resource('/api/color', ColorController::class);
