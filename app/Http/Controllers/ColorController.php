@@ -25,7 +25,24 @@ class ColorController extends Controller
 
     }
 
-    public function show(){
+    public function show($id){
+        $color = Color::find($id);
+        if(is_object($color)){
+            $data = [
+                'code' => 200,
+                'status' => 'success',
+                'post' => $color
+            ];
+        }else{
+            $data = [
+                'code' => 404,
+                'status' => 'error',
+                'message' => 'Registro no encontrado'
+            ];
+
+        }
+
+        return response()->json($data, $data['code']);
 
     }
 
