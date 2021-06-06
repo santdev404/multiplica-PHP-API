@@ -46,29 +46,25 @@ Please follow the below instrution to setup the PHP enviroment:
 - Move to /var/www/html/projects/ directory and download the multiplica-PHP-API respository
 - Next move inside the directory /var/www/html/projects/mutiplicaApi
 
-## Install Composer Dependencies
+### Install Composer Dependencies
 
 ```
 composer install
-
 ```
 
-## Install NPM Dependencies
+### Install NPM Dependencies
 
 ```
 npm install
-
 ```
 
-## Create a copy of your .env file
+### Create a copy of your .env file
 ```
 cp .env.example .env
-
 ```
-## Generate an app encryption key
+### Generate an app encryption key
 ```
 php artisan key:generate
-
 ```
 ## Database
 ### In the .env file, add database information to allow Laravel to connect to the database
@@ -79,21 +75,18 @@ php artisan key:generate
 ```
 DB_USERNAME=username
 DB_PASSWORD=password
-
 ```
 
 - Once your credentials are in the .env file, now you can migrate your database.
 
 ```
 php artisan migrate
-
 ```
 
 - Seed the database
 
 ```
 php artisan db:seed
-
 ```
 
 ## Virtual Host configuration
@@ -103,29 +96,23 @@ php artisan db:seed
 
 ```
  sudo chown -R $USER:$USER /var/www/html/projects/mutiplicaApi/public_html
-
 ```
 
 - Ensure that read access is permitted to the general web directory and all of the files and folders it contains so that pages can be served correctly: 
 
 ```
  sudo chmod -R 755 /var/www
-
 ```
 
 - Create New Virtual Host Files
 
 ```
-
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/multiBack.com.conf
-
-
 ```
 - Open the new file in your editor with root privileges:
 
 ```
 sudo nano /etc/apache2/sites-available/multiBack.com.conf
-
 ```
 
 - Copy the following content inside multiBack.com.conf
@@ -157,7 +144,6 @@ sudo nano /etc/apache2/sites-available/multiBack.com.conf
 
 ```
 sudo a2ensite multiBack.com.conf
-
 ```
 
 - Next, disable the default site defined in 000-default.conf:
@@ -165,14 +151,12 @@ sudo a2ensite multiBack.com.conf
 
 ```
 sudo a2dissite 000-default.conf
-
 ```
 
 - Next restart Apache to make these changes take effect:
 
 ```
 sudo systemctl restart apache2
-
 ```
 
 — Set Up Local Hosts File
