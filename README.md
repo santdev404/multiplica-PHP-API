@@ -1,4 +1,4 @@
-# MultiplicaFront
+# Multiplica Backend
 
 The scope of PHP API Restful application is to generate CRUD endpoints.
 The list of endpoint:
@@ -69,7 +69,7 @@ php artisan key:generate
 ## Database
 ### In the .env file, add database information to allow Laravel to connect to the database
 
-- Create a database with the name "Multiplica"
+- Be sure to create a database with the name `Multiplica`
 - Inside the .env file enter a valid username & password for Multiplica database
 
 ```
@@ -84,6 +84,10 @@ php artisan migrate
 ```
 
 - Seed the database
+This will create a set of colors and the user admin credentials.
+
+> Note: user =`admin@admin.com` password = `admin123`
+
 
 ```
 php artisan db:seed
