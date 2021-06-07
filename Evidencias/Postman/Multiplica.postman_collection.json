@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "40a7c4e0-0efa-4345-ae8c-f5a7afadc7c9",
+		"name": "Multiplica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "userRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"email\":\"newuser@gmail.com\",\"password\":\"user123\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://multiback.com/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "userLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"email\":\"newuser@gmail.com\",\"password\":\"user123\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://multiback.com/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "useDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://multiback.com/api/user/detail/13"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Color",
+			"item": [
+				{
+					"name": "colorIndex",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE0LCJlbWFpbCI6InhvY2g1QGdtYWlsLmNvbSIsImlhdCI6MTYyMjg0MDE4MCwiZXhwIjoxNjIzNDQ0OTgwfQ.c1qGEI1y4BKQw9IIp9KNxq2hpsqrukhqlAF3gdi4G5Y\"",
+								"type": "text"
+							}
+						],
+						"url": "http://multiback.com/api/color"
+					},
+					"response": []
+				},
+				{
+					"name": "colorShow",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImVtYWlsIjoieG9jaEBnbWFpbC5jb20iLCJpYXQiOjE2MjI3NjQ2MDAsImV4cCI6MTYyMzM2OTQwMH0._XBWbwKgy5ovzVICcD5-YWTOT2gpT8p0fkJv1F_oYWk\"",
+								"type": "text"
+							}
+						],
+						"url": "http://multiback.com/api/color/14"
+					},
+					"response": []
+				},
+				{
+					"name": "colorStore",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImVtYWlsIjoieG9jaEBnbWFpbC5jb20iLCJpYXQiOjE2MjI3NjgzODMsImV4cCI6MTYyMzM3MzE4M30.XGyvien7ZwyadvlXOquvwhzTezEQPikGTCs5X4OcvGw\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"name\":\"blue\", \"color\":\"#DECDBE\", \"pantone\":\"13-1107\",\"year\":\"2020\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://multiback.com/api/color"
+					},
+					"response": []
+				},
+				{
+					"name": "colorUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImVtYWlsIjoieG9jaEBnbWFpbC5jb20iLCJpYXQiOjE2MjI3NjgzODMsImV4cCI6MTYyMzM3MzE4M30.XGyvien7ZwyadvlXOquvwhzTezEQPikGTCs5X4OcvGw\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"name\":\"rouges\", \"color\":\"#TECDBE\", \"pantone\":\"12-1107\",\"year\":\"2021\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://multiback.com/api/color/2"
+					},
+					"response": []
+				},
+				{
+					"name": "colorDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImVtYWlsIjoieG9jaEBnbWFpbC5jb20iLCJpYXQiOjE2MjI3NjgzODMsImV4cCI6MTYyMzM3MzE4M30.XGyvien7ZwyadvlXOquvwhzTezEQPikGTCs5X4OcvGw\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"category_id\": \"2\",\"title\": \"The quiet place\",\"content\": \"Lanzamiento de celular samsung s100\", \"image\": \"img.jpg\"}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://multiback.com/api/color/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

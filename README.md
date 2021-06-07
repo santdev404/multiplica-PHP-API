@@ -19,6 +19,8 @@ For Angular Frontend: https://github.com/santdev404/multiplica-Front
 
 The communications between PHP backend and Angular Frontend is through URL with API calls.
 
+> You can find screenshots of the frontend application views and a json collections of the end point at multiplica-PHP-API repository inside the directory `/Evidencias/Capturas` and `/Evidencias/Postman`
+
 ## Technologies
 
 Backend
